@@ -1,0 +1,8 @@
+# ignore everything except .gitignore and specified config folders
+/*
+!.gitignore
+!.config/
+.config/*
+!.config/i3/
+!.config/i3status/
+!.config/picom/
