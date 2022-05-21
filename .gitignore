@@ -1,8 +1,12 @@
 # ignore everything except .gitignore and specified config folders
 /*
 !.gitignore
+!.vimrc
+
 !.config/
 .config/*
+
 !.config/i3/
 !.config/i3status/
 !.config/picom/
+!.config/alacritty/
