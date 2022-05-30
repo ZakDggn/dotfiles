@@ -204,8 +204,14 @@ bar {
   status_command i3status
 }
 
+# Launch firefox
+bindsym $mod+b exec --no-startup-id firefox
+
 # Use nitrogen to restore wallpaper
 exec --no-startup-id nitrogen --restore
+
+# Start redshift with a tray icon
+exec --no-startup-id redshift-gtk -l 51:0
 
 # Map caps lock to escape
 exec --no-startup-id setxkbmap -option caps:escape

@@ -26,7 +26,9 @@ tlp-rdw
 ## Setup commands
 
 - Disable PC Speaker: ```echo 'blacklist pcspkr' | sudo tee /etc/modprobe.d/nobeep.conf```
+- Enable lightdm: ```sudo systemctl enable lightdm.service```
 - Make alacritty the default terminal: ```echo 'TERMINAL=alacritty' | sudo tee -a /etc/environment```
+- Set a background with nitrogen: ```nitrogen --save --set-auto path/to/background
 
 ## Laptop setup commands
 

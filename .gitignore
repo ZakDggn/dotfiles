@@ -3,6 +3,7 @@
 !.gitignore
 !README.md
 !.vimrc
+!.gtkrc-2.0
 
 !.config/
 .config/*
@@ -11,3 +12,4 @@
 !.config/i3status/
 !.config/picom/
 !.config/alacritty/
+!.config/gtk-3.0/
