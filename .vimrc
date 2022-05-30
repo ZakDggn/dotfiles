@@ -12,6 +12,7 @@ Plug 'sheerun/vim-polyglot' " Language pack collection
 call plug#end()
 
 set relativenumber
+set number
 set showcmd
 
 " Set gruvbox theme

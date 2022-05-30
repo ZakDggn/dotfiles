@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Add user to video group to allow light to adjust the backlight brightness
+if [ -z "$1" ]; then
+  echo "Provide a username to add to the video group"
+	exit
+fi
+usermod -aG video "$1"
+
+# Enable tlp and tlp-rdw
+systemctl enable tlp.service
+systemctl mask systemd-rfkill.service
+systemctl mask systemd-rfkill.socket
+systemctl enable NetworkManager-dispatcher.service
