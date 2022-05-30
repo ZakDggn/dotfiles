@@ -4,6 +4,7 @@ general {
         interval = 1
 }
 
+order += "volume master"
 order += "wireless _first_"
 order += "battery all"
 order += "disk /"
@@ -11,13 +12,20 @@ order += "load"
 order += "memory"
 order += "tztime local"
 
+volume master {
+        format = "vol: %volume"
+        format_muted = "vol: muted (%volume)"
+        device = "pulse"
+}
+
 wireless _first_ {
-        format_up = "W: (%quality at %essid) %ip"
+        format_up = "W: (%quality at %essid)"
         format_down = "W: down"
 }
 
 battery all {
-        format = "%status %percentage %remaining"
+        format = "%status %percentage"
+        integer_battery_capacity = true
 }
 
 disk "/" {
