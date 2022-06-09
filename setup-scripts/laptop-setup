@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Install packages
+sudo pacman -Syu
+pacman -S --needed --noconfirm $(cat laptop-packages.txt)
+
+# Add user to video group to allow light to adjust the backlight brightness
+if [ -z "$1" ]; then
+  echo "Provide a username to add to the video group"
+  exit
+fi
+sudo usermod -aG video "$1"
+
+# Enable tlp and tlp-rdw
+sudo systemctl enable tlp.service
+sudo systemctl mask systemd-rfkill.service
+sudo systemctl mask systemd-rfkill.socket
+sudo systemctl enable NetworkManager-dispatcher.service
