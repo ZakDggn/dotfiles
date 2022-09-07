@@ -2,7 +2,7 @@
 
 # Install packages
 sudo pacman -Syu
-pacman -S --needed --noconfirm $(cat laptop-packages.txt)
+yay -S --needed $(cat laptop-packages.txt)
 
 # Add user to video group to allow light to adjust the backlight brightness
 if [ -z "$1" ]; then

@@ -6,7 +6,7 @@ general {
 
 order += "volume master"
 order += "wireless _first_"
-# order += "battery all"
+order += "battery all"
 # order += "disk /"
 # order += "load"
 # order += "memory"

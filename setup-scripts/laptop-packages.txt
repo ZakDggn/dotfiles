@@ -1,3 +1,4 @@
 light
 tlp
 tlp-rdw
+i3-battery-popup-git

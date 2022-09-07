@@ -3,6 +3,7 @@ i3status
 i3lock
 xss-lock
 dmenu
+rofi
 nitrogen
 vim
 git
@@ -16,6 +17,13 @@ eos-lightdm-slick-theme
 firefox
 redshift
 picom
+thunar
+thunar-archive-plugin
+thunar-media-tags-plugin
+thunar-volman
+tumbler
+gvfs
+gvfs-mtp
 gtk3
 gnome-themes-extra
 ttf-font-awesome

@@ -3,7 +3,7 @@ set -e
 
 # Install packages
 sudo pacman -Syu
-yay -S --needed --noconfirm $(cat packages.txt)
+yay -S --needed $(cat packages.txt)
 
 # Set default editor to vim and terminal to alacritty
 sudo sed -i '/EDITOR=/d;/TERMINAL=/d' /etc/environment
