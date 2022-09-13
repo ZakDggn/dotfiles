@@ -29,6 +29,7 @@ gnome-themes-extra
 ttf-font-awesome
 bitwarden
 libreoffice-fresh
+nomacs
 teams
 timeshift
 code

@@ -25,3 +25,6 @@ do
   rmdir /home/"$user"/$d
   ln -s /media/hdd/$d /home/"$user"/$d
 done
+
+# Remove battery indicator from status bar
+sudo sed -i 's/order += "battery all"/# order += "battery all"/' ~/.config/i3status/config
