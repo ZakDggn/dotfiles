@@ -31,3 +31,9 @@ sudo sed -i 's/#greeter-setup-script=/greeter-setup-script=\/usr\/bin\/numlockx 
 sudo mkdir -p /etc/systemd/logind.conf.d
 printf '[Login]\nHandlePowerKey=suspend\n' | sudo tee /etc/systemd/logind.conf.d/powerbutton.conf > /dev/null
 sudo systemctl kill -s HUP systemd-logind
+
+# Set firefox as the default for opening links, html files and pdfs
+xdg-mime default firefox.desktop 'x-scheme-handler/http'
+xdg-mime default firefox.desktop 'x-scheme-handler/https'
+xdg-mime default firefox.desktop 'text/html'
+xdg-mime default firefox.desktop 'application/pdf'

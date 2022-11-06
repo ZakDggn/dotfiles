@@ -17,6 +17,7 @@ eos-lightdm-slick-theme
 firefox
 redshift
 picom
+htop
 thunar
 thunar-archive-plugin
 thunar-media-tags-plugin
@@ -24,16 +25,17 @@ thunar-volman
 tumbler
 gvfs
 gvfs-mtp
+nomacs
 gtk3
 gnome-themes-extra
+ttf-jetbrains-mono
 ttf-font-awesome
 bitwarden
 libreoffice-fresh
-nomacs
+zip
 teams
 timeshift
 code
 spotify
 ffmpeg4.4
 spotify-adblock
-zip
