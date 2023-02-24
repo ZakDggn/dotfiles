@@ -7,11 +7,13 @@ alacritty
 dunst
 playerctl
 pavucontrol
+pamixer
 numlockx
 lightdm
 eos-lightdm-slick-theme
 firefox
 redshift
+network-manager-applet
 picom
 htop
 thunar
@@ -35,3 +37,4 @@ timeshift
 spotify
 ffmpeg4.4
 spotify-adblock
+i3lock-fancy-git
