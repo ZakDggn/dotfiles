@@ -32,7 +32,9 @@ bitwarden
 libreoffice-fresh
 zip
 code
-teams
+btop
+earlyoom
+systembus-notify
 timeshift
 spotify
 ffmpeg4.4

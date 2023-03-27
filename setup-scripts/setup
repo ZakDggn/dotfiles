@@ -41,3 +41,4 @@ xdg-mime default firefox.desktop 'application/pdf'
 # Create dwm.desktop file
 sudo mkdir -p /usr/share/xsessions
 sudo cp dwm.desktop /usr/share/xsessions
+sudo ln -s /usr/share/xsessions/dwm.desktop /usr/share/xsessions/default.desktop
