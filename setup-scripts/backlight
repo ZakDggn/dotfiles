@@ -1,3 +1,5 @@
+#!/bin/bash
+
 current=$(light -G)
 if (( $(echo "$current < 1" | bc) )); then
   light -S 1

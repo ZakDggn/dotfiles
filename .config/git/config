@@ -1,6 +1,7 @@
-[url "git@github.com:"]
-  insteadOf = https://github.com/
 [url "git@github-hn20191:hn20191"]
   insteadOf = git@github.com:hn20191
 [url "git@github-ZakDggn:ZakDggn"]
   insteadOf = git@github.com:ZakDggn
+[user]
+	email = 23458039+ZakDggn@users.noreply.github.com
+	name = ZakDggn
