@@ -35,6 +35,8 @@ code
 btop
 earlyoom
 systembus-notify
+lsd
+bat
 timeshift
 spotify
 ffmpeg4.4
