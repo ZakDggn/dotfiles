@@ -12,6 +12,9 @@ printf 'EDITOR=vim\nTERMINAL=alacritty\n' | sudo tee -a /etc/environment > /dev/
 # Disable PC Speaker
 echo 'blacklist pcspkr' | sudo tee /etc/modprobe.d/nobeep.conf > /dev/null
 
+# Set systemd-boot timeout to 0
+sudo sed -i 's/timeout.*/timeout 0/' /efi/loader/loader.conf
+
 # Enable lightdm
 sudo systemctl enable lightdm.service
 

@@ -2,6 +2,7 @@ dmenu
 rofi
 nitrogen
 vim
+nvim
 git
 alacritty
 dunst
@@ -27,7 +28,7 @@ nomacs
 gtk3
 gnome-themes-extra
 ttf-jetbrains-mono
-ttf-font-awesome
+ttf-jetbrains-mono-nerd
 bitwarden
 libreoffice-fresh
 zip
@@ -37,6 +38,7 @@ earlyoom
 systembus-notify
 lsd
 bat
+unclutter
 timeshift
 spotify
 ffmpeg4.4

@@ -1,13 +1,6 @@
 #!/bin/bash
 set -e
 
-if [ -z "$1" ]; then
-  echo "Provide username"
-  exit
-fi
-
-user="$1"
-
 # Mount hard drive
 sudo mkdir -p /media/hdd
 sudo chown root:root /media
@@ -20,8 +13,7 @@ fi
 sudo mount -a
 
 # Create hard drive symlinks
-for d in Desktop Documents Downloads Music Pictures Public Templates Videos
-do
-  rmdir /home/"$user"/$d
-  ln -s /media/hdd/$d /home/"$user"/$d
+for d in Desktop Documents Downloads Music Pictures Public Templates Videos; do
+  rmdir ~/$d
+  ln -s /media/hdd/$d ~/$d
 done
