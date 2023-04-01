@@ -10,6 +10,7 @@ playerctl
 pavucontrol
 pamixer
 numlockx
+xcape
 lightdm
 eos-lightdm-slick-theme
 firefox
@@ -25,6 +26,7 @@ tumbler
 gvfs
 gvfs-mtp
 nomacs
+mpv
 gtk3
 gnome-themes-extra
 ttf-jetbrains-mono
