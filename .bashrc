@@ -10,7 +10,14 @@
 bind '"\e[A":history-search-backward'
 bind '"\e[B":history-search-forward'
 
+# Automatically append a slash to directory symlinks
+bind 'set mark-symlinked-directories on'
+
+# Aliases
 alias ls="lsd"
 alias ll='ls -lav --ignore-glob=..'   # show long listing of all except ".."
 alias l='ls -lav --ignore-glob=.?*'   # show long listing but no hidden dotfiles except "."
 alias cat="bat"
+
+# Initialise starship prompt
+eval "$(starship init bash)"

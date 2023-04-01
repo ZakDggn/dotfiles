@@ -31,6 +31,8 @@ gtk3
 gnome-themes-extra
 ttf-jetbrains-mono
 ttf-jetbrains-mono-nerd
+noto-fonts-emoji
+starship
 bitwarden
 libreoffice-fresh
 zip
@@ -41,6 +43,7 @@ systembus-notify
 lsd
 bat
 unclutter
+papirus-icon-theme
 timeshift
 spotify
 ffmpeg4.4

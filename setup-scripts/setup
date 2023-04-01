@@ -51,3 +51,7 @@ mkdir -p ~/.local/share/applications
 cp nvim.desktop ~/.local/share/applications/
 xdg-mime default nvim.desktop 'text/plain'
 
+# Set nomacs as the default image viewer
+xdg-mime default org.nomacs.ImageLounge.desktop 'image/png'
+xdg-mime default org.nomacs.ImageLounge.desktop 'image/jpeg'
+xdg-mime default org.nomacs.ImageLounge.desktop 'image/bmp'
