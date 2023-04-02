@@ -42,6 +42,8 @@ earlyoom
 systembus-notify
 lsd
 bat
+ctags
+trash-cli
 unclutter
 papirus-icon-theme
 timeshift
