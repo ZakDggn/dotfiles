@@ -2,7 +2,7 @@ dmenu
 rofi
 nitrogen
 vim
-nvim
+neovim
 git
 alacritty
 dunst
