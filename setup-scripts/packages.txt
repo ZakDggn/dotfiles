@@ -1,7 +1,6 @@
 dmenu
 rofi
 nitrogen
-vim
 neovim
 git
 alacritty
