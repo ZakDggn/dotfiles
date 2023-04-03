@@ -18,6 +18,7 @@ alias ls="lsd"
 alias ll='ls -lav --ignore-glob=..'   # show long listing of all except ".."
 alias l='ls -lav --ignore-glob=.?*'   # show long listing but no hidden dotfiles except "."
 alias cat="bat"
+alias config='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
 # Initialise starship prompt
 eval "$(starship init bash)"

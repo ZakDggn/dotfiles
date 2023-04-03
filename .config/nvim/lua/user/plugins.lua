@@ -23,6 +23,12 @@ return require('packer').startup(function(use)
       require"startup".setup()
     end
   }
+  use 'nvim-tree/nvim-tree.lua'
+  use 'nvim-tree/nvim-web-devicons'
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  }
 
   if packer_bootstrap then
     require('packer').sync()
