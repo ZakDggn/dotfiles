@@ -5,7 +5,7 @@ sudo pacman -Syu
 yay -S --needed $(cat laptop-packages.txt)
 
 # Add user to video group to allow light to adjust the backlight brightness
-sudo usermod -aG video $USER
+sudo usermod -aG video "$USER"
 
 # Enable tlp and tlp-rdw
 sudo systemctl enable tlp.service

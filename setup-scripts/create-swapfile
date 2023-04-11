@@ -14,7 +14,7 @@ sudo chmod 0600 /swapfile
 sudo mkswap -U clear /swapfile
 sudo swapon /swapfile
 
-if [ -z "$(grep swapfile /etc/fstab)" ]; then
+if ! grep -q swapfile /etc/fstab; then
   echo "Adding entry to fstab for the swap file:"
   echo "/swapfile swap swap defaults 0 0" | sudo tee --append /etc/fstab
 fi

@@ -4,7 +4,7 @@ set -e
 # Mount hard drive
 sudo mkdir -p /media/hdd
 sudo chown root:root /media
-sudo chown "$user":"$user" /media/hdd
+sudo chown "$USER":"$USER" /media/hdd
 sudo chmod u=rwx,g=rx,o=rx /media
 chmod u=rwx,g=rx,o= /media/hdd
 if ! grep -q 'ea862cc9-c5b3-4c8a-a07b-ece92b9a649a' /etc/fstab; then
