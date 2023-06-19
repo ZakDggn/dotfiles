@@ -17,6 +17,7 @@ bind 'set mark-symlinked-directories on'
 alias ls="lsd"
 alias ll='ls -lav --ignore-glob=..'   # show long listing of all except ".."
 alias l='ls -lav --ignore-glob=.?*'   # show long listing but no hidden dotfiles except "."
+alias grep='grep --color=auto'
 alias cat="bat"
 alias config='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
