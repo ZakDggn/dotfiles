@@ -47,18 +47,6 @@ EndSection' | sudo tee /etc/X11/xorg.conf.d/50-mouse-acceleration.conf > /dev/nu
 sudo sed -i '/VISUAL=/d;/EDITOR=/d;/TERMINAL=/d' /etc/environment
 printf 'VISUAL=nvim\nEDITOR=nvim\nTERMINAL=alacritty\n' | sudo tee -a /etc/environment > /dev/null
 
-# Set firefox as the default for opening links, html files and pdfs
-xdg-mime default firefox.desktop 'x-scheme-handler/http'
-xdg-mime default firefox.desktop 'x-scheme-handler/https'
-xdg-mime default firefox.desktop 'text/html'
-xdg-mime default firefox.desktop 'application/pdf'
-
 # Create nvim.desktop file and set as default for opening text files
 mkdir -p ~/.local/share/applications
 cp nvim.desktop ~/.local/share/applications/
-xdg-mime default nvim.desktop 'text/plain'
-
-# Set nomacs as the default image viewer
-xdg-mime default org.nomacs.ImageLounge.desktop 'image/png'
-xdg-mime default org.nomacs.ImageLounge.desktop 'image/jpeg'
-xdg-mime default org.nomacs.ImageLounge.desktop 'image/bmp'

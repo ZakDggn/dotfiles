@@ -18,6 +18,7 @@ gtk3
 gvfs
 gvfs-mtp
 htop
+i3lock-color
 i3lock-fancy-git
 libreoffice-fresh
 lightdm
@@ -41,6 +42,7 @@ noto-fonts-extra
 numlockx
 nvidia
 orchis-theme
+pacman-contrib
 pamixer
 papirus-icon-theme
 pavucontrol

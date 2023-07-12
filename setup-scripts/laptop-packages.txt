@@ -1,4 +1,4 @@
-light
+acpilight
 acpi
 bc
 tlp

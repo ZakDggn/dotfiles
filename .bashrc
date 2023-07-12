@@ -14,12 +14,20 @@ bind '"\e[B":history-search-forward'
 bind 'set mark-symlinked-directories on'
 
 # Aliases
-alias ls="lsd"
+alias cat='bat'
+alias grep='grep --color=auto'
+alias config='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+
+if [[ "$TERM" = "linux" ]]; then
+  alias ls='ls --color=auto'
+  alias ll='ls -lav --ignore=..'
+  alias l='ls -lav --ignore=.?*'
+  return
+fi
+
+alias ls='lsd'
 alias ll='ls -lav --ignore-glob=..'   # show long listing of all except ".."
 alias l='ls -lav --ignore-glob=.?*'   # show long listing but no hidden dotfiles except "."
-alias grep='grep --color=auto'
-alias cat="bat"
-alias config='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
 # Initialise starship prompt
 eval "$(starship init bash)"
