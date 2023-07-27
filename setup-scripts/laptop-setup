@@ -18,4 +18,6 @@ echo 'Section "InputClass"
 	Identifier "touchpad catchall"
 	Driver "libinput"
 	Option "Tapping" "on"
+	Option "AccelProfile" "flat"
+	Option "AccelSpeed" "0.5"
 EndSection' | sudo tee /etc/X11/xorg.conf.d/30-touchpad.conf > /dev/null
