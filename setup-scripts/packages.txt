@@ -80,6 +80,7 @@ wireplumber
 xcape
 xclip
 xdg-utils
+xidlehook
 xorg-server
 yay
 zenity
