@@ -8,16 +8,6 @@ yay -S --needed $(cat packages.txt)
 # Disable PC Speaker
 echo 'blacklist pcspkr' | sudo tee /etc/modprobe.d/nobeep.conf > /dev/null
 
-# Set systemd-boot timeout to 0
-sudo sed -i 's/timeout.*/timeout 0/' /efi/loader/loader.conf
-
-# Add 'quiet spash' to kernel cmdline
-sudo mkdir -p /etc/kernel
-if [ -s /etc/kernel/cmdline ] && ! [ -s /etc/kernel/cmdline.backup ]; then
-  sudo mv /etc/kernel/cmdline /etc/kernel/cmdline.backup
-fi
-echo "quiet splash" | sudo tee /etc/kernel/cmdline > /dev/null
-
 # Enable lightdm
 sudo systemctl enable lightdm.service
 
