@@ -4,7 +4,11 @@ base
 base-devel
 bash-completion
 bat
+betterlockscreen
 bitwarden
+bluez
+bluez-utils
+bspwm-git
 btop
 code
 dmenu
@@ -18,8 +22,6 @@ gtk3
 gvfs
 gvfs-mtp
 htop
-i3lock-color
-i3lock-fancy-git
 libreoffice-fresh
 lightdm
 lightdm-webkit-theme-litarvan
@@ -52,6 +54,7 @@ pipewire-audio
 pipewire-pulse
 playerctl
 plymouth
+polybar
 python-gobject
 python-pyxdg
 redshift
@@ -62,6 +65,7 @@ spotify-adblock-git
 starship
 steam
 sudo
+sxhkd
 systembus-notify
 thunar
 thunar-archive-plugin

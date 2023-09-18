@@ -1,0 +1,27 @@
+#!/bin/bash
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+#bspc monitor -d I II III IV V VI VII VIII IX X
+bspc monitor -d 1 2 3 4 5 6 7 8 9
+
+bspc config border_width         2
+bspc config window_gap          12
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+nitrogen --restore &
+~/.config/polybar/launch.sh &
+dunst &
+pgrep -x redshift-gtk > /dev/null || redshift-gtk -l 51:0 &
+picom -b &
+nm-applet &
+setxkbmap -layout gb -option caps:ctrl_modifier; xcape -e '#66=Escape'
+pgrep -f low-battery-warning.sh > /dev/null || ~/dwm/low-battery-warning.sh 10 120 &
+pgrep -x earlyoom > /dev/null || earlyoom -r 3600 -n --avoid '(^|/)(init|systemd.*|Xorg|sshd)$' &
+pgrep -f systembus-notify > /dev/null || systembus-notify &
+pgrep -x unclutter > /dev/null || unclutter &
+
+bspc rule -a alacritty-scratchpad state=floating
