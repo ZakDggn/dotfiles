@@ -34,7 +34,7 @@ echo 'Section "InputClass"
 EndSection' | sudo tee /etc/X11/xorg.conf.d/50-mouse-acceleration.conf > /dev/null
 
 # Set keyboard layout
-sudo localectl set-x11-keymap gb
+sudo localectl set-x11-keymap gb "" "" caps:escape
 
 # Set default editor to neovim and terminal to alacritty
 sudo sed -i '/VISUAL=/d;/EDITOR=/d;/TERMINAL=/d' /etc/environment
