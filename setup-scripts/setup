@@ -58,6 +58,22 @@ ExecStartPost=/usr/bin/sleep 1
 
 [Install]
 WantedBy=sleep.target' | sudo tee /etc/systemd/system/suspend@.service > /dev/null
+sudo systemctl enable --now suspend@$USER.service
+
+# Create systemd resume hook to turn the display on when resuming from suspend
+echo '[Unit]
+Description=User resume actions
+After=suspend.target
+
+[Service]
+User=%I
+Type=simple
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/xset dpms force on
+
+[Install]
+WantedBy=suspend.target' | sudo tee /etc/systemd/system/resume@.service > /dev/null
+sudo systemctl enable --now resume@$USER.service
 
 # Copy wallpaper to Pictures
 cp wallpaper.png ~/Pictures/

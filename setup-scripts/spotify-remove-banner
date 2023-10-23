@@ -1,5 +1,6 @@
 #!/bin/bash
-sPATH=$(dirname $(realpath -L $(which spotify)))  # absolute path to Spotify
+#sPATH=$(dirname $(realpath -L $(which spotify)))  # absolute path to Spotify
+sPATH=/opt/spotify
 cd ${sPATH}/Apps/
 
 if [ "$1" == 'restore' ]; then
