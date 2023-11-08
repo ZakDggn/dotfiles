@@ -1,5 +1,0 @@
-acpilight
-acpi
-bc
-tlp
-tlp-rdw
