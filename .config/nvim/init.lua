@@ -27,15 +27,18 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
-require("lazy").setup({
-  {
-    "folke/tokyonight.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {},
-  },
-})
-vim.cmd[[colorscheme tokyonight-night]]
+status, lazy = pcall(require, "lazy")
+if status then
+  lazy.setup({
+    {
+      "folke/tokyonight.nvim",
+      lazy = false,
+      priority = 1000,
+      opts = {},
+    },
+  })
+  vim.cmd[[colorscheme tokyonight-night]]
+end
 
 vim.api.nvim_set_keymap("n", "<C-d>", "<C-d>zz", {})
 vim.api.nvim_set_keymap("n", "<C-u>", "<C-u>zz", {})
