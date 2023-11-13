@@ -5,7 +5,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
-vim.opt.wrap = false
+--vim.opt.wrap = false
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.smartindent = true
@@ -14,6 +14,8 @@ vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
 vim.opt.clipboard = unnamedplus
 vim.opt.termguicolors = true
+vim.api.nvim_set_keymap("n", "<C-d>", "<C-d>zz", {})
+vim.api.nvim_set_keymap("n", "<C-u>", "<C-u>zz", {})
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -27,18 +29,24 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
-status, lazy = pcall(require, "lazy")
-if status then
-  lazy.setup({
-    {
-      "folke/tokyonight.nvim",
-      lazy = false,
-      priority = 1000,
-      opts = {},
-    },
-  })
-  vim.cmd[[colorscheme tokyonight-night]]
-end
+require("lazy").setup({
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+  },
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
+})
 
-vim.api.nvim_set_keymap("n", "<C-d>", "<C-d>zz", {})
-vim.api.nvim_set_keymap("n", "<C-u>", "<C-u>zz", {})
+require("nvim-treesitter.configs").setup({
+  auto_install = true,
+  highlight = { enable = true },
+  indent = { enable = true },
+  additional_vim_regex_highlighting = false,
+})
+
+vim.cmd[[colorscheme tokyonight]]
