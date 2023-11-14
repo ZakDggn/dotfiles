@@ -6,6 +6,7 @@
 .local/state/
 .local/share/
 .gnupg/
+.nuget/
 .dmrc
 .xsession-errors*
 .config/Bitwarden/
