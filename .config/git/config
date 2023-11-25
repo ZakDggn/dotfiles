@@ -5,3 +5,5 @@
 [user]
   email = 23458039+ZakDggn@users.noreply.github.com
   name = ZakDggn
+[init]
+  defaultBranch = main

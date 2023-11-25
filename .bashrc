@@ -28,5 +28,10 @@ if [[ "$TERM" = "linux" ]]; then
   return
 fi
 
-# Start fish shell
-exec fish
+# Start fish shell if not already in fish
+if [[ $(ps --no-header --pid=$PPID --format=comm) != "fish" && -z ${BASH_EXECUTION_STRING} ]]; then
+  shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=''
+  exec fish $LOGIN_OPTION
+else
+  eval "$(starship init bash)"
+fi

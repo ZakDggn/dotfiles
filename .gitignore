@@ -11,6 +11,9 @@
 .xsession-errors*
 .config/Bitwarden/
 .dotfiles/
+.config/discord/
+.jdks/
+.gradle/
 dwm/
 dwmblocks-async/
 Documents
