@@ -35,10 +35,7 @@ require("lazy").setup({
     build = ":TSUpdate",
   },
   {
-    "folke/tokyonight.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {},
+    "catppuccin/nvim",
   },
 })
 
@@ -49,4 +46,4 @@ require("nvim-treesitter.configs").setup({
   additional_vim_regex_highlighting = false,
 })
 
-vim.cmd[[colorscheme tokyonight]]
+vim.cmd[[colorscheme catppuccin-mocha]]
