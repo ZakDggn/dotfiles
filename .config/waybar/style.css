@@ -1,7 +1,8 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: "Symbols Nerd Font", "JetBrains Mono Semibold", sans-serif;
-    font-size: 14px;
+    font-family: "Symbols Nerd Font", "Roboto Mono", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
     border: none;
     border-radius: 5px;
 }
@@ -129,4 +130,9 @@ label:focus {
 
 #scratchpad.empty {
 	background-color: transparent;
+}
+
+#tray * {
+  font-family: "Cantarell";
+  font-weight: 600;
 }
