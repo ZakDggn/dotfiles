@@ -261,6 +261,11 @@ exec nm-applet
 exec earlyoom -r 3600 -n --avoid '(^|/)(init|systemd.*|Xorg|sshd)$'
 exec systembus-notify
 #exec ~/dwm/keyd-indicator
+exec swayidle -w \
+    timeout 300 'swaymsg "output * dpms off"' \
+        resume 'swaymsg "output * dpms on"' \
+    timeout 600 'systemctl suspend' \
+    before-sleep 'swaylock -f -c 000000; playerctl --all-players stop'
 
 # Colors
 # class                 border  backgr. text    indicator child_border
