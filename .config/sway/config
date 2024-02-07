@@ -224,6 +224,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -perceived +5
 bindsym XF86MonBrightnessDown exec xbacklight -perceived -5
 bindsym Shift+XF86MonBrightnessUp exec xbacklight -set 100
 bindsym Shift+XF86MonBrightnessDown exec xbacklight -set 1
+bindsym Print exec env XDG_SCREENSHOTS_DIR=/home/zakdggn/Pictures/Screenshots grimshot save anything
 
 bindsym $mod+a exec env MOZ_ENABLE_WAYLAND=1 firefox
 bindsym $mod+m exec env LD_PRELOAD=/usr/lib/spotify-adblock.so spotify --enable-features=UseOzonePlatform --ozone-platform=wayland
@@ -265,7 +266,9 @@ exec swayidle -w \
     timeout 300 'swaymsg "output * dpms off"' \
         resume 'swaymsg "output * dpms on"' \
     timeout 600 'systemctl suspend' \
-    before-sleep 'swaylock -f -c 000000; playerctl --all-players stop'
+    before-sleep 'swaylock -f -i ~/.config/sway/wallpaper_blurred.png; \
+                  playerctl --all-players stop'
+exec /home/zakdggn/.local/bin/wayland-pipewire-idle-inhibit
 
 # Colors
 # class                 border  backgr. text    indicator child_border
