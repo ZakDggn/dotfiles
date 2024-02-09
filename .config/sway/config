@@ -236,7 +236,7 @@ input type:touchpad {
     pointer_accel 0.5
     tap enabled
     dwt enabled
-    scroll_factor 0.2
+    scroll_factor 0.3
 }
 
 # Keyboard layout
@@ -258,7 +258,7 @@ exec swayidle -w \
     timeout 600 'systemctl suspend' \
     before-sleep 'swaylock -f -i ~/.config/sway/wallpaper_blurred.png; \
                   playerctl --all-players stop'
-exec /home/zakdggn/.local/bin/wayland-pipewire-idle-inhibit
+exec wayland-pipewire-idle-inhibit
 
 # Colors
 # class                 border  backgr. text    indicator child_border
