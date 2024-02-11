@@ -20,7 +20,8 @@ set $term foot
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | wmenu | xargs swaymsg exec --
+set $menu1 wofi --show drun
+set $menu2 dmenu_path | wmenu | xargs swaymsg exec --
 
 ### Output configuration
 #
@@ -71,7 +72,8 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
     bindsym $mod+Shift+q kill
 
     # Start your launcher
-    bindsym $mod+d exec $menu
+    bindsym $mod+d exec $menu1
+    bindsym $mod+Shift+d exec $menu2
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -246,19 +248,7 @@ input type:keyboard {
 }
 
 # Autostart
-exec dunst
-exec gammastep -l 51:0 -t 6500:3000
-exec nm-applet
-exec earlyoom -r 3600 -n --avoid '(^|/)(init|systemd.*|Xorg|sshd)$'
-exec systembus-notify
-#exec ~/dwm/keyd-indicator
-exec swayidle -w \
-    timeout 300 'swaymsg "output * dpms off"' \
-        resume 'swaymsg "output * dpms on"' \
-    timeout 600 'systemctl suspend' \
-    before-sleep 'swaylock -f -i ~/.config/sway/wallpaper_blurred.png; \
-                  playerctl --all-players stop'
-exec wayland-pipewire-idle-inhibit
+exec ~/.config/sway/autostart.sh
 
 # Colors
 # class                 border  backgr. text    indicator child_border
@@ -266,3 +256,6 @@ client.focused          #4c7899 #285577 #ffffff #89fab4   #89b4fa
 
 # Hide mouse cursor after a period of inactivity.
 seat seat0 hide_cursor 3000
+
+# Automatically float Picture-in-Picture windows
+for_window [title="Picture-in-Picture"] floating enable
