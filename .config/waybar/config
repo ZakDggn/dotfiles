@@ -7,7 +7,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad"],
     "modules-center": ["sway/window"],
-    "modules-right": ["pulseaudio", "cpu", "memory", "battery", "backlight", "clock", "tray"],
+    "modules-right": ["pulseaudio", "cpu", "memory", "battery", "backlight", "clock", "tray", "custom/power"],
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
@@ -72,7 +72,6 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": ""
     },
     "custom/media": {
         "format": "{icon} {}",
@@ -85,6 +84,11 @@
         "escape": true,
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    "custom/power": {
+        "format": "",
+        "on-click": "wlogout -p layer-shell",
+        "tooltip": false
     }
 }
 
