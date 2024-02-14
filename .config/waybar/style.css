@@ -4,12 +4,11 @@
     font-size: 15px;
     font-weight: 500;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 1);
-    border-bottom: 3px solid rgba(100, 114, 125, 1);
+    background-color: #222222;
     border-radius: 0px;
     color: #ffffff;
     transition-property: background-color;
@@ -63,7 +62,7 @@ button:hover {
 }
 
 #workspaces button.focused {
-    background-color: #64727D;
+    background-color: #606060;
     box-shadow: inset 0 -3px #ffffff;
 }
 
@@ -94,9 +93,9 @@ button:hover {
 #mpd,
 #custom-power {
     padding: 0 10px;
-    margin: 6px 4px;
-    color: #333333;
-    background-color: #bbccdd;
+    margin: 4px 4px;
+    color: #eeeeee;
+    background-color: #333333;
 }
 
 #window,
