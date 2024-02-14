@@ -8,6 +8,19 @@
     "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad"],
     "modules-center": ["sway/window"],
     "modules-right": ["pulseaudio", "cpu", "memory", "battery", "backlight", "clock", "tray", "custom/power"],
+    "sway/workspaces": {
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+            "7": [],
+            "8": [],
+            "9": []
+          }
+    },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
