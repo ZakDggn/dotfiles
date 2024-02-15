@@ -240,6 +240,8 @@ input type:touchpad {
     dwt enabled
     scroll_factor 0.3
 }
+bindgesture swipe:right workspace prev
+bindgesture swipe:left workspace next
 
 # Keyboard layout
 input type:keyboard {
@@ -255,7 +257,7 @@ exec ~/.config/sway/autostart.sh
 client.focused          #4c7899 #285577 #ffffff #94e2d5   #89b4fa
 
 # Hide mouse cursor after a period of inactivity.
-seat seat0 hide_cursor 3000
+seat seat0 hide_cursor 10000
 
 # Automatically float Picture-in-Picture windows
 for_window [title="Picture-in-Picture"] floating enable
