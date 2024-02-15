@@ -5,13 +5,15 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
---vim.opt.wrap = false
+vim.opt.wrap = false
+vim.opt.listchars = "extends:>,precedes:<"
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.smartindent = true
 vim.opt.expandtab = true
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
+vim.opt.colorcolumn = "80"
 vim.opt.clipboard = unnamedplus
 vim.opt.termguicolors = true
 vim.api.nvim_set_keymap("n", "<C-d>", "<C-d>zz", {})
