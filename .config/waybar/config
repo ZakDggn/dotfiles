@@ -73,7 +73,7 @@
         "format": "{volume}% {icon}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": "{volume}% {icon} (muted)",
+        "format-muted": "{volume}% ",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
@@ -100,7 +100,7 @@
     },
     "custom/power": {
         "format": "",
-        "on-click": "wlogout -p layer-shell",
+        "on-click": "nwg-bar",
         "tooltip": false
     }
 }

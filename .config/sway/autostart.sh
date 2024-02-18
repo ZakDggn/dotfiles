@@ -16,6 +16,6 @@ start swayidle -w \
     timeout 300 'swaymsg "output * dpms off"' \
         resume 'swaymsg "output * dpms on"' \
     timeout 600 'systemctl suspend' \
-    before-sleep 'playerctl --all-players stop; swaylock'
+    before-sleep 'playerctl --all-players pause; swaylock'
 start wayland-pipewire-idle-inhibit
 start lxsession

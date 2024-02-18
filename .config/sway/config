@@ -208,7 +208,7 @@ bindsym XF86AudioRaiseVolume exec pamixer --increase 5
 bindsym XF86AudioLowerVolume exec pamixer --decrease 5
 bindsym XF86AudioMute exec pamixer --toggle-mute
 bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioStop exec playerctl --all-players stop
+bindsym XF86AudioStop exec playerctl --all-players pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86MonBrightnessUp exec xbacklight -perceived +5
@@ -254,10 +254,20 @@ exec ~/.config/sway/autostart.sh
 
 # Colors
 # class                 border  backgr. text    indicator child_border
-client.focused          #4c7899 #285577 #ffffff #94e2d5   #89b4fa
+#client.focused          #89b4fa #89b4fa #89b4fa #94e2d5   #89b4fa
+#client.focused_inactive #888888 #888888 #888888 #555555   #555555
+#client.unfocused        #888888 #555555 #555555 #555555   #555555
+
+client.focused          #555555 #555555 #555555 #94e2d5   #89b4fa
+client.focused_inactive #555555 #555555 #555555 #555555   #555555
+client.unfocused        #111111 #111111 #111111 #555555   #555555
+
+# No text in title bars
+font JetBrains Mono 0.1
 
 # Hide mouse cursor after a period of inactivity.
 seat seat0 hide_cursor 10000
 
 # Automatically float Picture-in-Picture windows
 for_window [title="Picture-in-Picture"] floating enable
+
