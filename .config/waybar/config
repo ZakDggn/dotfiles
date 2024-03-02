@@ -40,11 +40,13 @@
         "format": "{:%a %d %b, %H:%M}",
     },
     "cpu": {
-        "format": "{usage}% ",
-        "tooltip": false
+        "format": "{usage:2}% ",
+        "tooltip": false,
+        "interval": 5
     },
     "memory": {
-        "format": "{}% "
+        "format": "{}% ",
+        "interval": 5
     },
     "backlight": {
         // "device": "acpi_video1",

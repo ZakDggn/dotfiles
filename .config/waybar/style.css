@@ -4,7 +4,6 @@
     font-size: 15px;
     font-weight: 500;
     border: none;
-    border-radius: 10px;
 }
 
 window#waybar {
@@ -100,6 +99,7 @@ button:hover {
     margin: 4px 4px;
     color: #eeeeee;
     background-color: #333333;
+    border-radius: 10px;
 }
 
 #window,
@@ -130,6 +130,7 @@ label:focus {
 
 #scratchpad {
     background: rgba(0, 0, 0, 0.2);
+    color: #aaaaaa;
 }
 
 #scratchpad.empty {
@@ -139,4 +140,8 @@ label:focus {
 #tray * {
   font-family: "Cantarell";
   font-weight: 400;
+}
+
+tooltip {
+    background: #333333;
 }
