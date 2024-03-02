@@ -7,7 +7,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad"],
     "modules-center": ["sway/window"],
-    "modules-right": ["pulseaudio", "cpu", "memory", "battery", "backlight", "clock", "tray", "custom/power"],
+    "modules-right": ["pulseaudio", "cpu", "memory", "battery", "clock", "tray", "custom/power"],
     "sway/workspaces": {
         "persistent-workspaces": {
             "1": [],
