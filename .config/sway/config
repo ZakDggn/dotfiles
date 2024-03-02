@@ -87,7 +87,8 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
     # Exit sway (logs you out of your Wayland session)
     #bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
-    bindsym $mod+Shift+e exec swaymsg exit
+    bindsym $mod+Shift+Escape exec swaymsg exit
+    bindsym $mod+Shift+e exec nwg-bar
 
 #
 # Moving around:
@@ -211,10 +212,10 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioStop exec playerctl --all-players pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
-bindsym XF86MonBrightnessUp exec xbacklight -perceived +5
-bindsym XF86MonBrightnessDown exec xbacklight -perceived -5
-bindsym Shift+XF86MonBrightnessUp exec xbacklight -set 100
-bindsym Shift+XF86MonBrightnessDown exec xbacklight -set 1
+bindsym XF86MonBrightnessUp exec xbacklight -perceived +5 -fps 60
+bindsym XF86MonBrightnessDown exec xbacklight -perceived -5 -fps 60
+bindsym Shift+XF86MonBrightnessUp exec xbacklight -set 100 -fps 60
+bindsym Shift+XF86MonBrightnessDown exec xbacklight -set 1 -fps 60
 bindsym Print exec grimshot save anything
 
 bindsym $mod+a exec env firefox
