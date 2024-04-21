@@ -1,3 +1,6 @@
+*/*
+!.config/*
+!.icons/*
 .config/Bitwarden/
 .config/chromium/
 .config/discord/
@@ -6,24 +9,6 @@
 .config/JetBrains/
 .config/libreoffice/
 .config/obsidian/
-.cache/
-.cargo/
-.dotfiles/
-.gnupg/
-.gradle/
-.jdks/
-.local/
-.mozilla/
-.nuget/
-.nv/
-.pki/
-.rustup/
-.ssh/
-.wine/
-.dmrc
-.xsession-errors*
-dwm/
-dwmblocks-async/
 Desktop
 Documents
 Downloads
@@ -32,4 +17,3 @@ Pictures
 Public
 Templates
 Videos
-Games/

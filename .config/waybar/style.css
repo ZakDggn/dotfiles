@@ -1,6 +1,6 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: "Roboto Mono", "Symbols Nerd Font", "Font Awesome 6 Free", sans-serif;
+    font-family: "Roboto Mono", "Symbols Nerd Font", sans-serif;
     font-size: 15px;
     font-weight: 500;
     border: none;
@@ -144,4 +144,8 @@ label:focus {
 
 tooltip {
     background: #333333;
+}
+
+#idle_inhibitor.deactivated {
+    color: #555555;
 }

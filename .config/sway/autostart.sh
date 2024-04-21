@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function start {
-  grep -q "$1" <<<"$running" || "$@" &
+    grep -q "$1" <<<"$running" || "$@" &
 }
 
 running="$(ps aux)"
@@ -17,6 +17,9 @@ start swayidle -w \
         resume 'swaymsg "output * dpms on"' \
     timeout 600 'systemctl suspend' \
     before-sleep 'playerctl pause; sleep 1' \
-    before-sleep 'swaylock'
+    before-sleep 'swaylock' \
+    after-resume 'swaymsg "output * dpms on"'
 start wayland-pipewire-idle-inhibit
 start lxsession
+start wmname LG3D
+start ~/.config/sway/low-battery-warning.sh 10 120
