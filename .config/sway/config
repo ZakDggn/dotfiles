@@ -255,16 +255,13 @@ exec ~/.config/sway/autostart.sh
 
 # Colors
 # class                 border  backgr. text    indicator child_border
-#client.focused          #89b4fa #89b4fa #89b4fa #94e2d5   #89b4fa
-#client.focused_inactive #888888 #888888 #888888 #555555   #555555
-#client.unfocused        #888888 #555555 #555555 #555555   #555555
+client.focused          #555555 #555555 #ffffff #94e2d5   #89b4fa
+client.focused_inactive #333333 #333333 #ffffff #555555   #555555
+client.unfocused        #333333 #333333 #999999 #555555   #555555
 
-client.focused          #777777 #777777 #777777 #94e2d5   #89b4fa
-client.focused_inactive #555555 #555555 #555555 #555555   #555555
-client.unfocused        #111111 #111111 #111111 #555555   #555555
-
-# No text in title bars
-font monospace 0.1
+# Title bars
+font Roboto Mono Medium 10
+titlebar_padding 5 1
 
 # Hide mouse cursor after a period of inactivity.
 seat seat0 hide_cursor 10000
