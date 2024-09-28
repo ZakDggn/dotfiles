@@ -231,7 +231,7 @@ smart_borders on
 # Mouse sensitivity
 input type:pointer {
     accel_profile flat
-    pointer_accel -0.6
+    pointer_accel -0.2
 }
 # Touchpad
 input type:touchpad {
@@ -269,4 +269,4 @@ seat seat0 hide_cursor 10000
 # Floating rules
 for_window [title="Picture-in-Picture"] floating enable
 for_window [class="matplotlib"] floating enable
-
+for_window [title="^Extension: \(Bitwarden.*"] floating enable
