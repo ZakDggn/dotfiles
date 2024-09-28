@@ -22,5 +22,5 @@ start swayidle -w \
 start wayland-pipewire-idle-inhibit
 start lxsession
 start wmname LG3D
-start ~/.config/sway/low-battery-warning.sh 10 120
-start playerctl daemon
+start ~/.config/sway/low-battery-warning.sh 10 300
+start playerctld daemon
