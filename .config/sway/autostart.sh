@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 function start {
     grep -q "$1" <<<"$running" || "$@" &

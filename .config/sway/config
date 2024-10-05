@@ -20,12 +20,12 @@ set $term kitty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 set $menu1 rofi -show drun
-set $menu2 dmenu_path | wmenu | xargs swaymsg exec --
+set $menu2 wmenu-run
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output * bg ~/.config/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #
 # Example configuration:
 #
@@ -212,10 +212,10 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioStop exec playerctl --all-players pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
-bindsym XF86MonBrightnessUp exec xbacklight -perceived +5 -fps 60
-bindsym XF86MonBrightnessDown exec xbacklight -perceived -5 -fps 60
-bindsym Shift+XF86MonBrightnessUp exec xbacklight -set 100 -fps 60
-bindsym Shift+XF86MonBrightnessDown exec xbacklight -set 1 -fps 60
+bindsym XF86MonBrightnessUp exec brightnessctl -e set 5%+
+bindsym XF86MonBrightnessDown exec brightnessctl -e set 5%-
+bindsym Shift+XF86MonBrightnessUp exec brightnessctl set 100%
+bindsym Shift+XF86MonBrightnessDown exec brightnessctl set 0%
 bindsym Print exec grimshot save anything
 
 bindsym $mod+a exec env firefox
