@@ -209,7 +209,7 @@ bindsym XF86AudioRaiseVolume exec pamixer --increase 5
 bindsym XF86AudioLowerVolume exec pamixer --decrease 5
 bindsym XF86AudioMute exec pamixer --toggle-mute
 bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioStop exec playerctl --all-players pause
+bindsym XF86AudioStop exec playerctl --all-players stop
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86MonBrightnessUp exec brightnessctl -e set 5%+
@@ -270,3 +270,4 @@ seat seat0 hide_cursor 10000
 for_window [title="Picture-in-Picture"] floating enable
 for_window [class="matplotlib"] floating enable
 for_window [title="^Extension: \(Bitwarden.*"] floating enable
+for_window [class="File Operation Progress"] floating enable

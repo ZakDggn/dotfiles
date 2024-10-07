@@ -20,7 +20,7 @@ start swayidle -w \
     before-sleep 'swaylock' \
     after-resume 'swaymsg "output * dpms on"'
 start wayland-pipewire-idle-inhibit
-start lxsession
+start lxpolkit
 start wmname LG3D
 start ~/.config/sway/low-battery-warning.sh 10 300
 start playerctld daemon
