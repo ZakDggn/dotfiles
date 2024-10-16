@@ -6,6 +6,9 @@
 
 # If running from tty1 start sway
 if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-  #exec start-sway &> .sway.log
-  exec sway &> .sway.log
+  if [[ "${hostname}" -eq "nixos-desktop" ]]; then
+    exec sway --unsupported-gpu &> .sway.log
+  else
+    exec start-sway &> .sway.log
+  fi
 fi
