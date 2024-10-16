@@ -16,7 +16,6 @@ start swayidle -w \
     timeout 300 'chayang -d 10 && swaymsg "output * dpms off"' \
         resume 'swaymsg "output * dpms on"' \
     timeout 600 'systemctl suspend' \
-    before-sleep 'playerctl pause; sleep 1' \
     before-sleep 'swaylock' \
     after-resume 'swaymsg "output * dpms on"'
 start wayland-pipewire-idle-inhibit
