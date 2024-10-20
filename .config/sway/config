@@ -214,8 +214,8 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86MonBrightnessUp exec xbacklight -perceived +5 -fps 60
 bindsym XF86MonBrightnessDown exec xbacklight -perceived -5 -fps 60
-bindsym Shift+XF86MonBrightnessUp exec xbacklight -set 100 -fps 60
-bindsym Shift+XF86MonBrightnessDown exec xbacklight -set 1 -fps 60
+bindsym Shift+XF86MonBrightnessUp output * power on
+bindsym Shift+XF86MonBrightnessDown output * power off
 bindsym Print exec /usr/share/sway-contrib/grimshot save anything
 bindsym $mod+n exec dunstctl history-pop
 bindsym $mod+Shift+n exec dunstctl close
