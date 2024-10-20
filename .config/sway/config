@@ -214,8 +214,8 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86MonBrightnessUp exec brightnessctl -e set 5%+
 bindsym XF86MonBrightnessDown exec brightnessctl -e set 5%-
-bindsym Shift+XF86MonBrightnessUp exec brightnessctl set 100%
-bindsym Shift+XF86MonBrightnessDown exec brightnessctl set 0%
+bindsym Shift+XF86MonBrightnessUp output * power on
+bindsym Shift+XF86MonBrightnessDown output * power off
 bindsym Print exec grimshot save anything
 bindsym $mod+n exec dunstctl history-pop
 bindsym $mod+Shift+n exec dunstctl close
