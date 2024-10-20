@@ -6,9 +6,9 @@
 
 # If running from tty1 start sway
 if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-  if [[ "${hostname}" -eq "nixos-desktop" ]]; then
-    exec sway --unsupported-gpu &> .sway.log
-  else
-    exec start-sway &> .sway.log
-  fi
+    export MOZ_ENABLE_WAYLAND=1
+    export XDG_CURRENT_DESKTOP='sway:wlroots'
+    export XDG_SCREENSHOTS_DIR=~/Pictures/Screenshots
+    export XDG_CONFIG_HOME=~/.config
+    exec sway &> .sway.log
 fi
