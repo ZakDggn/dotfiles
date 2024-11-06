@@ -3,7 +3,7 @@
     "spacing": 4, // Gaps between modules (4px)
     "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad"],
     "modules-center": ["sway/window"],
-    "modules-right": ["custom/keyd", "pulseaudio", "cpu", "memory", "battery", "clock", "tray", "custom/power"],
+    "modules-right": ["pulseaudio", "cpu", "memory", "battery", "clock", "tray", "custom/power"],
     "sway/workspaces": {
         "disable-scroll": true,
         "persistent-workspaces": {
@@ -74,6 +74,7 @@
         "format-icons": {
             "default": ["", "", ""]
         },
+	"ignored-sinks": ["Easy Effects Sink"]
     },
     "custom/power": {
         "format": "",
@@ -88,8 +89,5 @@
         },
         "timeout": 180
     },
-    "custom/keyd": {
-        "exec": "$HOME/.config/waybar/keyd-indicator"
-    }
 }
 
