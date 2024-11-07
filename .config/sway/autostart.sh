@@ -17,7 +17,7 @@ start swayidle -w \
     timeout 600 'systemctl suspend' \
     before-sleep 'swaylock' \
     after-resume 'swaymsg "output * dpms on"'
-start wayland-pipewire-idle-inhibit
+start sway-audio-idle-inhibit > /dev/null
 start lxpolkit
 start wmname LG3D
 start ~/.config/sway/low-battery-warning.sh 10 300
