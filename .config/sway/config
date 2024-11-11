@@ -199,7 +199,6 @@ bar {
 }
 
 include /etc/sway/config.d/*
-exec systemctl --user import-environment WAYLAND_DISPLAY DISPLAY XDG_CURRENT_DESKTOP SWAYSOCK I3SOCK XCURSOR_SIZE XCURSOR_THEME
 
 # Custom key bindings
 bindsym XF86AudioRaiseVolume exec pamixer --increase 5
@@ -219,6 +218,7 @@ bindsym $mod+Shift+n exec dunstctl close
 bindsym $mod+a exec env firefox
 bindsym $mod+m exec env LD_PRELOAD=/usr/lib/spotify-adblock.so spotify --disable-gpu
 bindsym $mod+Shift+s exec systemctl suspend
+bindsym button1 nop
 
 # Disable title bars
 default_border pixel 2
