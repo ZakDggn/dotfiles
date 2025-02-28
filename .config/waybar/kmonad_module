@@ -1,0 +1,5 @@
+#!/bin/bash
+
+while inotifywait -e create,close_write --include kmonad_layout /tmp > /dev/null; do
+  cat /tmp/kmonad_layout
+done

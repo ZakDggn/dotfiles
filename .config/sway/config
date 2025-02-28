@@ -205,6 +205,7 @@ bindsym XF86AudioRaiseVolume exec pamixer --increase 5
 bindsym XF86AudioLowerVolume exec pamixer --decrease 5
 bindsym XF86AudioMute exec pamixer --toggle-mute
 bindsym XF86AudioPlay exec playerctl play-pause
+bindsym Shift+XF86AudioPlay exec playerctl --all-players stop
 bindsym XF86AudioStop exec playerctl --all-players stop
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
@@ -244,7 +245,7 @@ bindgesture swipe:left workspace next
 
 # Keyboard layout
 input type:keyboard {
-    xkb_layout "gb"
+    xkb_layout "us"
     xkb_numlock enabled
 }
 
@@ -266,6 +267,6 @@ seat seat0 hide_cursor 10000
 
 # Floating rules
 for_window [title="Picture-in-Picture"] floating enable
-for_window [class="matplotlib"] floating enable
+for_window [title="^Figure .*" app_id="python3"] floating enable
 for_window [title="^Extension: \(Bitwarden.*"] floating enable
 for_window [class="File Operation Progress"] floating enable

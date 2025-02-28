@@ -94,7 +94,8 @@ button:hover {
 #idle_inhibitor,
 #scratchpad,
 #mpd,
-#custom-power {
+#custom-power,
+#custom-kmonad {
     padding: 0 10px;
     margin: 4px 4px;
     color: #eeeeee;
