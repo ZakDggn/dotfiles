@@ -5,10 +5,9 @@ if status is-login
     end
 end
 if status is-interactive
-    alias cat='bat'
-    alias ls='lsd'
-    alias l='ls -lv'
-    alias ll='ls -lav'
+    alias ls='eza --icons auto'
+    alias l='ls -l'
+    alias ll='ls -la'
     alias grep='grep --color=auto'
     alias ..='cd ..'
     alias ...='cd ../..'

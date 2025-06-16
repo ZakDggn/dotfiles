@@ -150,7 +150,7 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
     # Switch the current container between different layout styles
     bindsym $mod+s layout stacking
     bindsym $mod+w layout tabbed
-    bindsym $mod+e layout toggle split
+    bindsym $mod+t layout toggle split
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
@@ -220,6 +220,7 @@ bindsym $mod+a exec env firefox
 bindsym $mod+m exec env LD_PRELOAD=/usr/lib/spotify-adblock.so spotify --disable-gpu
 bindsym $mod+Shift+s exec systemctl suspend
 bindsym button1 nop
+bindsym $mod+e exec emacsclient --create-frame
 
 # Disable title bars
 default_border pixel 2
@@ -269,4 +270,4 @@ seat seat0 hide_cursor 10000
 for_window [title="Picture-in-Picture"] floating enable
 for_window [title="^Figure .*" app_id="python3"] floating enable
 for_window [title="^Extension: \(Bitwarden.*"] floating enable
-for_window [class="File Operation Progress"] floating enable
+for_window [title="File Operation Progress"] floating enable
