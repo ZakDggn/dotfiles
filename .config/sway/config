@@ -201,9 +201,9 @@ bar {
 include /etc/sway/config.d/*
 
 # Custom key bindings
-bindsym XF86AudioRaiseVolume exec pamixer --increase 5
-bindsym XF86AudioLowerVolume exec pamixer --decrease 5
-bindsym XF86AudioMute exec pamixer --toggle-mute
+bindsym XF86AudioRaiseVolume exec wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+
+bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym Shift+XF86AudioPlay exec playerctl --all-players stop
 bindsym XF86AudioStop exec playerctl --all-players stop
@@ -213,7 +213,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -perceived +5 -fps 60
 bindsym XF86MonBrightnessDown exec xbacklight -perceived -5 -fps 60
 bindsym Shift+XF86MonBrightnessUp output * power on
 bindsym Shift+XF86MonBrightnessDown output * power off
-bindsym Print exec /usr/share/sway-contrib/grimshot save anything
+bindsym Print exec grimshot save anything
 bindsym $mod+n exec dunstctl history-pop
 bindsym $mod+Shift+n exec dunstctl close
 bindsym $mod+a exec env firefox
