@@ -1,62 +1,40 @@
-# Default config for sway
-#
-# Copy this to ~/.config/sway/config and edit it to your liking.
-#
-# Read `man 5 sway` for a complete reference.
-
 ### Variables
-#
-# Logo key. Use Mod1 for Alt.
 set $mod Mod4
-# Home row direction keys, like vim
+
 set $left h
 set $down j
 set $up k
 set $right l
-# Your preferred terminal emulator
+
 set $term kitty
 
-# Your preferred application launcher
 set $menu1 rofi -show drun
 set $menu2 wmenu-run
 
 ### Output configuration
-#
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+# Default wallpaper
 output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-#
-# Example configuration:
-#
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
-
-### Idle configuration
-#
-# Example configuration:
-#
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-#          before-sleep 'swaylock -f -c 000000'
-#
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
 
 ### Input configuration
-#
-# Example configuration:
-#
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
-#
-# You can get the names of your inputs by running: swaymsg -t get_inputs
-# Read `man 5 sway-input` for more information about this section.
+# Mouse
+input type:pointer {
+    accel_profile flat
+    pointer_accel -0.2
+}
+# Touchpad
+input type:touchpad {
+    accel_profile flat
+    pointer_accel 0.5
+    tap enabled
+    dwt enabled
+    scroll_factor 0.3
+}
+bindgesture swipe:right workspace prev
+bindgesture swipe:left workspace next
+# Keyboard
+input type:keyboard {
+    xkb_layout "us"
+}
 
 ### Key bindings
 #
@@ -84,7 +62,6 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+Escape exec swaymsg exit
     bindsym $mod+Shift+e exec nwg-bar
 
 #
@@ -164,7 +141,7 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
     # Move focus to the parent container
     bindsym $mod+p focus parent
     # Move focus to the child container
-    bindsym $mod+o focus child
+    bindsym $mod+c focus child
 #
 # Scratchpad:
 #
@@ -180,75 +157,61 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #
 # Resizing containers:
 #
-# left will shrink the containers width
-# right will grow the containers width
-# up will shrink the containers height
-# down will grow the containers height
-bindsym $mod+Control+$left resize shrink width 20px
-bindsym $mod+Control+$down resize grow height 20px
-bindsym $mod+Control+$up resize shrink height 20px
-bindsym $mod+Control+$right resize grow width 20px
+    # left will shrink the containers width
+    # right will grow the containers width
+    # up will shrink the containers height
+    # down will grow the containers height
+    bindsym $mod+Control+$left resize shrink width 20px
+    bindsym $mod+Control+$down resize grow height 20px
+    bindsym $mod+Control+$up resize shrink height 20px
+    bindsym $mod+Control+$right resize grow width 20px
 
+    # Ditto, with the arrow keys
+    bindsym $mod+Control+Left resize shrink width 20px
+    bindsym $mod+Control+Down resize grow height 20px
+    bindsym $mod+Control+Up resize shrink height 20px
+    bindsym $mod+Control+Right resize grow width 20px
+#
+# Custom:
+#
+    # Audio
+    bindsym XF86AudioRaiseVolume exec wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+
+    bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+    bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+    bindsym XF86AudioPlay exec playerctl play-pause
+    bindsym Shift+XF86AudioPlay exec playerctl --all-players stop
+    bindsym XF86AudioStop exec playerctl --all-players stop
+    bindsym XF86AudioNext exec playerctl next
+    bindsym XF86AudioPrev exec playerctl previous
+    # Display
+    bindsym XF86MonBrightnessUp exec xbacklight -perceived +5 -fps 60
+    bindsym XF86MonBrightnessDown exec xbacklight -perceived -5 -fps 60
+    bindsym Shift+XF86MonBrightnessUp output * power on
+    bindsym Shift+XF86MonBrightnessDown output * power off
+    # Misc.
+    bindsym Print exec grimshot save anything
+    bindsym $mod+n exec dunstctl history-pop
+    bindsym $mod+Shift+n exec dunstctl close
+    bindsym $mod+a exec env firefox
+    bindsym $mod+m exec env LD_PRELOAD=/usr/lib/spotify-adblock.so spotify --disable-gpu
+    bindsym $mod+Shift+s exec systemctl suspend
+    bindsym $mod+e exec emacsclient --create-frame
+    bindsym button1 nop
 
 #
 # Status Bar:
 #
-# Read `man 5 sway-bar` for more information about this section.
 bar {
     swaybar_command waybar
 }
 
 include /etc/sway/config.d/*
 
-# Custom key bindings
-bindsym XF86AudioRaiseVolume exec wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+
-bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
-bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym Shift+XF86AudioPlay exec playerctl --all-players stop
-bindsym XF86AudioStop exec playerctl --all-players stop
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
-bindsym XF86MonBrightnessUp exec xbacklight -perceived +5 -fps 60
-bindsym XF86MonBrightnessDown exec xbacklight -perceived -5 -fps 60
-bindsym Shift+XF86MonBrightnessUp output * power on
-bindsym Shift+XF86MonBrightnessDown output * power off
-bindsym Print exec grimshot save anything
-bindsym $mod+n exec dunstctl history-pop
-bindsym $mod+Shift+n exec dunstctl close
-bindsym $mod+a exec env firefox
-bindsym $mod+m exec env LD_PRELOAD=/usr/lib/spotify-adblock.so spotify --disable-gpu
-bindsym $mod+Shift+s exec systemctl suspend
-bindsym button1 nop
-bindsym $mod+e exec emacsclient --create-frame
-
 # Disable title bars
 default_border pixel 2
 default_floating_border pixel 2
 
 smart_borders on
-
-# Mouse sensitivity
-input type:pointer {
-    accel_profile flat
-    pointer_accel -0.2
-}
-# Touchpad
-input type:touchpad {
-    accel_profile flat
-    pointer_accel 0.5
-    tap enabled
-    dwt enabled
-    scroll_factor 0.3
-}
-bindgesture swipe:right workspace prev
-bindgesture swipe:left workspace next
-
-# Keyboard layout
-input type:keyboard {
-    xkb_layout "us"
-    xkb_numlock enabled
-}
 
 # Autostart
 exec ~/.config/sway/autostart.sh
@@ -262,6 +225,8 @@ client.unfocused        #333333 #333333 #999999 #555555   #555555
 # Title bars
 font Roboto Mono Medium 10
 titlebar_padding 5 1
+
+seat seat0 xcursor_theme breeze_cursors 24
 
 # Hide mouse cursor after a period of inactivity.
 seat seat0 hide_cursor 10000

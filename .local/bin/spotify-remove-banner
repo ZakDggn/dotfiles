@@ -1,0 +1,25 @@
+#!/bin/bash
+#sPATH=$(dirname $(realpath -L $(which spotify)))  # absolute path to Spotify
+sPATH=/opt/spotify
+cd ${sPATH}/Apps/ || exit
+
+if [ "$1" == 'restore' ]; then
+    if [ -w xpui.spa_bak ] && [ -w . ]; then
+        rm -f xpui.spa
+        mv xpui.spa_bak xpui.spa
+        echo 'Restore success'
+    else
+        [ -f xpui.spa_bak ] && echo 'Permission denied' || echo 'Backup not found'
+    fi
+    exit 0
+fi
+
+if [ -w xpui.spa ] && [ -w . ]; then
+    cp xpui.spa xpui.spa_bak  # create a backup, in case of trouble
+    unzip -p xpui.spa xpui-snapshot.js | sed 's/adsEnabled:\!0/adsEnabled:false/' > xpui-snapshot.js
+    zip --update xpui.spa xpui-snapshot.js
+    rm xpui-snapshot.js
+    echo 'Success'
+else
+    [ -f xpui.spa ] && echo 'Permission denied' || echo 'File not found'
+fi
