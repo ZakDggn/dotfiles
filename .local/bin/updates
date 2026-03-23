@@ -1,1 +1,31 @@
-/home/zakdggn/packages/updates
+#!/bin/bash
+
+if ! command -v checkupdates > /dev/null; then
+  echo "Error: pacman-contrib not installed (required to check official repositories)"
+  exit 1
+fi
+
+if ! command -v aur > /dev/null; then
+  echo "Error: aurutils not installed (required to check AUR packages)"
+  exit 1
+fi
+
+if ! command -v pkgctl > /dev/null; then
+  echo "Error: devtools not installed (required to check custom packages)"
+  exit 1
+fi
+
+echo "Official repositories:"
+checkupdates
+echo
+
+echo "AUR:"
+pacman -Qm | aur vercmp
+echo
+
+echo "Custom packages:"
+for d in $(find ~/packages/*/.nvchecker.toml -exec dirname {} \;); do
+  cd "$d"
+  pkgctl version check
+done
+echo
