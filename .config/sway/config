@@ -184,8 +184,8 @@ input type:keyboard {
     bindsym XF86AudioNext exec playerctl next
     bindsym XF86AudioPrev exec playerctl previous
     # Display
-    bindsym XF86MonBrightnessUp exec brightnessctl --exponent set 2%+
-    bindsym XF86MonBrightnessDown exec brightnessctl --exponent set 2%-
+    bindsym XF86MonBrightnessUp exec brightnessctl --exponent=2 set 5%+
+    bindsym XF86MonBrightnessDown exec brightnessctl --min-value=1000 --exponent=2 set 5%-
     bindsym Shift+XF86MonBrightnessUp output * power on
     bindsym Shift+XF86MonBrightnessDown output * power off
     # Misc.
