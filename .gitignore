@@ -1,6 +1,5 @@
-*/*
+*
 !.config/*
-!.icons/*
 .config/Bitwarden/
 .config/chromium/
 .config/discord/
@@ -10,11 +9,3 @@
 .config/libreoffice/
 .config/mozilla/
 .config/obsidian/
-Desktop
-Documents
-Downloads
-Music
-Pictures
-Public
-Templates
-Videos

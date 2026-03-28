@@ -11,7 +11,7 @@ if status is-interactive
     alias grep='grep --color=auto'
     alias ..='cd ..'
     alias ...='cd ../..'
-    alias config='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+    alias dotfiles='git --git-dir="$HOME/.dotfiles" --work-tree="$HOME"'
     alias lvim='NVIM_APPNAME=nvim-lazyvim nvim'
     if string match -eq kitty $TERM
         alias clear='printf "\e[H\e[3J"'
